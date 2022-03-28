@@ -16,6 +16,8 @@ jobs:
       - name: Commit new build
         run: |
           mv out/* .
+          git config --global user.email ${{ secrets.USER_EMAIL }}
+          git config --global user.name "${{ secrets.USER_NAME }}"
           git add index.html 404.html _next 
           git commit -m "build v0.0.1"
           git push -f origin github-pages
