@@ -10,6 +10,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
+          token: ${{ secrets.GH_TOKEN }}
       - run: yarn
       - run: yarn build
-      - run: ls
+      - name: Commit new build
+      - run: |
+          mv out/* .
+          git add index.html 404.html _next 
+          git commit -m "build v0.0.1"
+          git push -f origin github-pages
