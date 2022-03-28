@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://json.schemastore.org/yamllint.json": "file:///home/frattezi/Work/gh-pages-nextjs-deploy/.github/workflows/deploy.yaml"
-    }
-}
